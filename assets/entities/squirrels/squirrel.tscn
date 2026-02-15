@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://qqlydxv0k4j6"]
+
+[ext_resource type="Texture2D" uid="uid://cyfouoo8kgm43" path="res://assets/entities/squirrels/squirrel_run_east.png" id="1_8wfun"]
+[ext_resource type="Script" uid="uid://bc1eif8ludqvs" path="res://scripts/squirrel.gd" id="1_ywo41"]
+[ext_resource type="Texture2D" uid="uid://b01cljmwvyq58" path="res://assets/entities/squirrels/squirrel_idle_east.png" id="2_ywo41"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iewo2"]
+atlas = ExtResource("2_ywo41")
+region = Rect2(0, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnhjb"]
+atlas = ExtResource("2_ywo41")
+region = Rect2(124, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gqcq"]
+atlas = ExtResource("2_ywo41")
+region = Rect2(248, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m68kc"]
+atlas = ExtResource("2_ywo41")
+region = Rect2(372, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj2cg"]
+atlas = ExtResource("2_ywo41")
+region = Rect2(496, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iae8"]
+atlas = ExtResource("2_ywo41")
+region = Rect2(620, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vug0t"]
+atlas = ExtResource("1_8wfun")
+region = Rect2(0, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atfb2"]
+atlas = ExtResource("1_8wfun")
+region = Rect2(124, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3016s"]
+atlas = ExtResource("1_8wfun")
+region = Rect2(248, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuxxy"]
+atlas = ExtResource("1_8wfun")
+region = Rect2(372, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1e1e"]
+atlas = ExtResource("1_8wfun")
+region = Rect2(496, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2hdh"]
+atlas = ExtResource("1_8wfun")
+region = Rect2(620, 0, 124, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh6eo"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_iewo2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_xnhjb")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_4gqcq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_m68kc")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_uj2cg")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1iae8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_vug0t")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_atfb2")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_3016s")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_iuxxy")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_f1e1e")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_s2hdh")
+}],
+"loop": true,
+"name": &"run_east",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0p7q7"]
+radius = 21.0
+
+[node name="Squirrel" type="CharacterBody2D" unique_id=779225309]
+script = ExtResource("1_ywo41")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1790679766]
+position = Vector2(1, -27)
+sprite_frames = SubResource("SpriteFrames_bh6eo")
+animation = &"idle"
+frame_progress = 0.079105295
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1283788475]
+position = Vector2(-8, -21)
+shape = SubResource("CircleShape2D_0p7q7")

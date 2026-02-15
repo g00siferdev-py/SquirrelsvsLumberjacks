@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://d05jwod057y78"]
+
+[ext_resource type="Script" uid="uid://btfhjli22nq41" path="res://scripts/lumberjack.gd" id="1_apggl"]
+[ext_resource type="Texture2D" uid="uid://b3frhve8f1iw0" path="res://assets/entities/lumberjacks/lumberjack.png" id="2_84bfn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdklv"]
+radius = 27.0
+height = 142.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g84iq"]
+atlas = ExtResource("2_84bfn")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yqkf"]
+atlas = ExtResource("2_84bfn")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cjaj"]
+atlas = ExtResource("2_84bfn")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egc3n"]
+atlas = ExtResource("2_84bfn")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x4kb"]
+atlas = ExtResource("2_84bfn")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6u0f"]
+atlas = ExtResource("2_84bfn")
+region = Rect2(600, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvuck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g84iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yqkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cjaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egc3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x4kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6u0f")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Lumberjack" type="CharacterBody2D" unique_id=1803585238]
+script = ExtResource("1_apggl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=21586070]
+position = Vector2(0, -88)
+shape = SubResource("CapsuleShape2D_fdklv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=384227073]
+position = Vector2(-3.0000305, -120)
+scale = Vector2(3.1135411, 2.949044)
+sprite_frames = SubResource("SpriteFrames_lvuck")
+animation = &"walk"
+frame_progress = 0.022973336
