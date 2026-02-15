@@ -33,18 +33,18 @@ texture = ExtResource("2_feb5d")
 flip_h = true
 
 [node name="Tree3" type="Sprite2D" parent="Trees" unique_id=1017056146]
-position = Vector2(730, -60.000008)
+position = Vector2(725.00006, 5)
 scale = Vector2(2.8076172, 5.1972656)
 texture = ExtResource("2_feb5d")
 
 [node name="Tree2" type="Sprite2D" parent="Trees" unique_id=1773088828]
-position = Vector2(413, -211.00002)
+position = Vector2(418, -146)
 scale = Vector2(3.250976, 6.3945313)
 texture = ExtResource("2_feb5d")
 flip_h = true
 
 [node name="Tree4" type="Sprite2D" parent="Trees" unique_id=1504234891]
-position = Vector2(856, -211.00002)
+position = Vector2(879, -151)
 scale = Vector2(3.250976, 6.3945313)
 texture = ExtResource("2_feb5d")
 flip_h = true

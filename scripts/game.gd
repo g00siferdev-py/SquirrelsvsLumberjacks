@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var ground_shape: CollisionShape2D = get_node_or_null("Ground/CollisionShape2D")
+@onready var ground_shape: CollisionShape2D = get_node_or_null("Ground/StaticBody2D")
 # Drag Acorn.tscn into this in the Inspector
 @export var acorn_scene: PackedScene
 # Path to the squirrel instance inside Game.tscn
@@ -21,6 +21,9 @@ func _ready() -> void:
 
 
 func spawn_lumberjack() -> void:
+	if get_tree().get_nodes_in_group("lumberjacks").size() > 0:
+		return
+
 	if lumberjack_scene == null:
 		push_warning("lumberjack_scene not set. Drag Lumberjack.tscn into Game's lumberjack_scene field.")
 		return
@@ -34,6 +37,7 @@ func spawn_lumberjack() -> void:
 	var ground_y := lumberjack_y
 
 	var lj := lumberjack_scene.instantiate()
+	lj.add_to_group("lumberjacks")
 
 	# IMPORTANT: set direction BEFORE adding to scene tree (before _ready runs)
 	lj.direction = 1 if from_left else -1
@@ -46,7 +50,7 @@ func spawn_lumberjack() -> void:
 	var ground_top_y := 600.0
 	
 	if ground_shape == null:
-		push_warning("Ground/CollisionShape2D not found. Spawning at fallback Y = 600")
+		push_warning("Ground/StaticBody2D not found. Spawning at fallback Y = 600")
 	else:
 		#Try to compute top of RectangleShape2D ( recommended ground type)
 		var rect := ground_shape.shape as RectangleShape2D
