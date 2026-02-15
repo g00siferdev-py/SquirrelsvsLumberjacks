@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dp5vmmrefslf1"]
+
+[ext_resource type="Texture2D" uid="uid://be4kv6i6psid8" path="res://assets/environment/acorn.png" id="1_5qxrg"]
+[ext_resource type="Script" uid="uid://bq37da67vxos5" path="res://scripts/acorn.gd" id="1_5rduq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5rduq"]
+radius = 14.142136
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53btn"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjq66"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qywv5"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0c1m"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ovia"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vib1p"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55gip"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1weh"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwg3i"]
+atlas = ExtResource("1_5qxrg")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wp7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53btn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjq66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qywv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0c1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ovia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vib1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55gip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1weh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwg3i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Acorn" type="RigidBody2D" unique_id=1191585477]
+script = ExtResource("1_5rduq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536207368]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_5rduq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1890419786]
+position = Vector2(0, -9)
+scale = Vector2(0.84375006, 0.890625)
+sprite_frames = SubResource("SpriteFrames_8wp7d")
+frame_progress = 0.01362379

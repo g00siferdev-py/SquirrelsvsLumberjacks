@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dcgrrwu1a7w8t"]
+
+[ext_resource type="Texture2D" uid="uid://de05scyh0eywt" path="res://assets/environment/forest_bg.PNG" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://c7wb7cdbt1ehy" path="res://scripts/game.gd" id="1_ryrav"]
+[ext_resource type="Texture2D" uid="uid://cwa57c6bpbggo" path="res://assets/environment/tree2.png" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://dopxabwpxwqwe" path="res://assets/environment/branch1.png" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://d05jwod057y78" path="res://assets/entities/lumberjacks/lumberjack.tscn" id="3_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://lhpusl4teiac" path="res://assets/environment/branch3.png" id="4_7jktm"]
+[ext_resource type="PackedScene" uid="uid://qqlydxv0k4j6" path="res://assets/entities/squirrels/squirrel.tscn" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://dp5vmmrefslf1" path="res://assets/environment/acorn.tscn" id="7_eow3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
+size = Vector2(2039, 76.5)
+
+[node name="Game" type="Node2D" unique_id=1557034659]
+script = ExtResource("1_ryrav")
+acorn_scene = ExtResource("7_eow3j")
+lumberjack_scene = ExtResource("3_j5wjh")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1169106087]
+
+[node name="ForestBg" type="Sprite2D" parent="Parallax2D" unique_id=1024951342]
+position = Vector2(646, 356)
+scale = Vector2(1.6344393, 1.6344393)
+texture = ExtResource("1_e2o6t")
+
+[node name="Trees" type="Node2D" parent="." unique_id=1909897796]
+
+[node name="Tree1" type="Sprite2D" parent="Trees" unique_id=1540693245]
+position = Vector2(143, -132)
+scale = Vector2(3.2861328, 6.021616)
+texture = ExtResource("2_feb5d")
+flip_h = true
+
+[node name="Tree3" type="Sprite2D" parent="Trees" unique_id=1017056146]
+position = Vector2(730, -60.000008)
+scale = Vector2(2.8076172, 5.1972656)
+texture = ExtResource("2_feb5d")
+
+[node name="Tree2" type="Sprite2D" parent="Trees" unique_id=1773088828]
+position = Vector2(413, -211.00002)
+scale = Vector2(3.250976, 6.3945313)
+texture = ExtResource("2_feb5d")
+flip_h = true
+
+[node name="Tree4" type="Sprite2D" parent="Trees" unique_id=1504234891]
+position = Vector2(856, -211.00002)
+scale = Vector2(3.250976, 6.3945313)
+texture = ExtResource("2_feb5d")
+flip_h = true
+
+[node name="Branches" type="StaticBody2D" parent="." unique_id=579197430]
+
+[node name="Branch1" type="Sprite2D" parent="Branches" unique_id=740120634]
+position = Vector2(254, 91.00001)
+scale = Vector2(4.3242188, 2.5449219)
+texture = ExtResource("3_fc0e3")
+
+[node name="Branch3" type="Sprite2D" parent="Branches" unique_id=699588171]
+position = Vector2(888, 130)
+scale = Vector2(4.660156, 3.8095126)
+texture = ExtResource("4_7jktm")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Branches" unique_id=2017694560]
+position = Vector2(0, 150)
+polygon = PackedVector2Array(-35, -1, 20, 5, 71, 10, 125, -13, 170, -18, 214, -32, 271, -39, 312, -26, 353, -26, 397, -29, 440, -21, 485, 6, 539, 20, 590, 26, 619, 18, 645, 5, 661, -10, 703, -11, 722, 1, 758, 14, 801, 25, 854, 41, 905, 15, 954, 4, 1025, -23, 1100, -39, 1131, -61, 1150, -77, 1173, -78, 1151, -48, 1087, -18, 992, 4, 860, 49, 749, 22, 682, -4, 620, 31, 560, 33, 481, 15, 391, -19, 315, -17, 272, -30, 215, -22, 69, 28, -13, 6)
+
+[node name="Squirrel" parent="." unique_id=779225309 instance=ExtResource("5_7jktm")]
+position = Vector2(23, 153)
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1916332776]
+
+[node name="StaticBody2D" type="CollisionShape2D" parent="Ground" unique_id=812598538]
+position = Vector2(720, 677.25)
+shape = SubResource("RectangleShape2D_j5wjh")
