@@ -53,7 +53,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_abrae")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_x0s4t")
 }],
 "loop": true,
@@ -88,12 +88,12 @@ animations = [{
 script = ExtResource("1_apggl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=21586070]
-position = Vector2(0, -88)
+position = Vector2(0, -66)
 shape = SubResource("CapsuleShape2D_fdklv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=384227073]
-position = Vector2(2.999999, -98)
+position = Vector2(-3.9999995, -111)
 scale = Vector2(3.1135411, 2.949044)
 sprite_frames = SubResource("SpriteFrames_lvuck")
 animation = &"swing"
-frame_progress = 0.39790356
+frame_progress = 0.34276894
