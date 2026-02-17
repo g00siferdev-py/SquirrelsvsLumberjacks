@@ -33,6 +33,9 @@ func _ready() -> void:
 	_pick_target_trunk_x()
 
 
+func refresh_trunk_target() -> void:
+	_pick_target_trunk_x()
+
 func _pick_target_trunk_x() -> void:
 	_target_trunk_x = INF
 	var has_target := false

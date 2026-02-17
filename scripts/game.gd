@@ -45,8 +45,7 @@ func spawn_lumberjack() -> void:
 	add_child(lj)
 	lj.global_position = Vector2(spawn_x, ground_y)
 
-	
-	#Default spawn height is Ground isn't found
+	# Default spawn height if Ground isn't found
 	var ground_top_y := 600.0
 	
 	if ground_shape == null:
@@ -59,7 +58,12 @@ func spawn_lumberjack() -> void:
 		else:
 			ground_top_y = ground_shape.global_position.y
 	lj.global_position = Vector2(spawn_x, ground_top_y - 2)
-	#Set direction if the script supports it
+
+	# Re-pick trunk target after final spawn position is set.
+	if lj.has_method("refresh_trunk_target"):
+		lj.refresh_trunk_target()
+
+	# Set direction if the script supports it
 	if lj.has_method("set"):
 		lj.direction = 1 if from_left else -1
 

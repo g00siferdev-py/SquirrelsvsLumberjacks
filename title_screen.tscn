@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b5ob1h7rjjxyw"]
+
+[ext_resource type="Script" uid="uid://cc6mjq7ou8615" path="res://scripts/title_screen.gd" id="1_3p1kq"]
+[ext_resource type="VideoStream" uid="uid://g0q6ulreks0h" path="res://assets/UI/title.ogv" id="2_ak2if"]
+
+[node name="TitleScreen" type="Control" unique_id=466124340]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3p1kq")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=363487063]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_ak2if")
+expand = true
+
+[node name="StartButton" type="Button" parent="." unique_id=1933859510]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -110.0
+offset_right = 120.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start"
+
+[node name="RevealTimer" type="Timer" parent="." unique_id=562765099]
+one_shot = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="RevealTimer" to="." method="_on_reveal_timer_timeout"]
