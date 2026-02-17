@@ -1,12 +1,46 @@
 [gd_scene format=3 uid="uid://d05jwod057y78"]
 
 [ext_resource type="Script" uid="uid://btfhjli22nq41" path="res://scripts/lumberjack.gd" id="1_apggl"]
+[ext_resource type="Texture2D" uid="uid://b78idfqih10qk" path="res://assets/entities/lumberjacks/dies.png" id="2_3yqkf"]
 [ext_resource type="Texture2D" uid="uid://b3frhve8f1iw0" path="res://assets/entities/lumberjacks/lumberjack.png" id="2_84bfn"]
 [ext_resource type="Texture2D" uid="uid://pwvbq0fixtq6" path="res://assets/entities/lumberjacks/lb_axe_swing.png" id="2_fdklv"]
+[ext_resource type="Texture2D" uid="uid://qijqvur553ad" path="res://assets/entities/lumberjacks/hit.png" id="2_g84iq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdklv"]
 radius = 27.0
 height = 142.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32ei6"]
+atlas = ExtResource("2_3yqkf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fmw8"]
+atlas = ExtResource("2_3yqkf")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40pi4"]
+atlas = ExtResource("2_3yqkf")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvveo"]
+atlas = ExtResource("2_3yqkf")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dgxy"]
+atlas = ExtResource("2_g84iq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3clwu"]
+atlas = ExtResource("2_g84iq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnkkb"]
+atlas = ExtResource("2_g84iq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyqnu"]
+atlas = ExtResource("2_g84iq")
+region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvuck"]
 atlas = ExtResource("2_fdklv")
@@ -46,6 +80,40 @@ region = Rect2(600, 0, 120, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lvuck"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32ei6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fmw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40pi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvveo")
+}],
+"loop": false,
+"name": &"dies",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dgxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3clwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnkkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyqnu")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_lvuck")
@@ -92,8 +160,7 @@ position = Vector2(0, -66)
 shape = SubResource("CapsuleShape2D_fdklv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=384227073]
-position = Vector2(-3.9999995, -111)
+position = Vector2(-0.99999976, -93)
 scale = Vector2(3.1135411, 2.949044)
 sprite_frames = SubResource("SpriteFrames_lvuck")
-animation = &"swing"
-frame_progress = 0.34276894
+animation = &"walk"

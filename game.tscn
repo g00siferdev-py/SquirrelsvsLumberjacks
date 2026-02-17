@@ -45,9 +45,10 @@ texture = ExtResource("2_feb5d")
 flip_h = true
 
 [node name="Tree1" type="Area2D" parent="Trees/Tree1" unique_id=1831120089 groups=["tree_trunks"]]
+position = Vector2(27.996431, 55.632904)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree1/Tree1" unique_id=107365462]
-position = Vector2(0, 58)
+position = Vector2(0.6086178, 0.33213806)
 shape = SubResource("RectangleShape2D_tree1")
 
 [node name="Tree3" type="Sprite2D" parent="Trees" unique_id=1017056146]
@@ -56,9 +57,10 @@ scale = Vector2(2.8076172, 5.1972656)
 texture = ExtResource("2_feb5d")
 
 [node name="Tree3" type="Area2D" parent="Trees/Tree3" unique_id=1232584043 groups=["tree_trunks"]]
+position = Vector2(9.972848, 43.291996)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree3/Tree3" unique_id=1721691908]
-position = Vector2(0, 58)
+position = Vector2(0, 0.76963425)
 shape = SubResource("RectangleShape2D_tree3")
 
 [node name="Tree2" type="Sprite2D" parent="Trees" unique_id=1773088828]
@@ -68,9 +70,10 @@ texture = ExtResource("2_feb5d")
 flip_h = true
 
 [node name="Tree2" type="Area2D" parent="Trees/Tree2" unique_id=166531663 groups=["tree_trunks"]]
+position = Vector2(29.221994, 55.51619)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree2/Tree2" unique_id=1422858154]
-position = Vector2(0, 58)
+position = Vector2(-0.30760002, 0.1563797)
 shape = SubResource("RectangleShape2D_tree2")
 
 [node name="Tree4" type="Sprite2D" parent="Trees" unique_id=1504234891]
@@ -80,9 +83,10 @@ texture = ExtResource("2_feb5d")
 flip_h = true
 
 [node name="Tree4" type="Area2D" parent="Trees/Tree4" unique_id=929655467 groups=["tree_trunks"]]
+position = Vector2(29.837193, 57.861946)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree4/Tree4" unique_id=1755256162]
-position = Vector2(0, 58)
+position = Vector2(-0.30760002, 1.0946846)
 shape = SubResource("RectangleShape2D_tree4")
 
 [node name="Branches" type="StaticBody2D" parent="." unique_id=579197430]
@@ -104,7 +108,7 @@ polygon = PackedVector2Array(-35, -1, 20, 5, 71, 10, 125, -13, 170, -18, 214, -3
 [node name="Squirrel" parent="." unique_id=779225309 instance=ExtResource("5_7jktm")]
 position = Vector2(23, 153)
 
-[node name="Ground" type="StaticBody2D" parent="." unique_id=1916332776]
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1916332776 groups=["ground"]]
 
 [node name="StaticBody2D" type="CollisionShape2D" parent="Ground" unique_id=812598538]
 position = Vector2(720, 677.25)

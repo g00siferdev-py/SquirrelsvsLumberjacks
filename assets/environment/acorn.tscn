@@ -78,6 +78,8 @@ animations = [{
 }]
 
 [node name="Acorn" type="RigidBody2D" unique_id=1191585477]
+contact_monitor = true
+max_contacts_reported = 4
 script = ExtResource("1_5rduq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536207368]

@@ -6,7 +6,7 @@ extends Node2D
 # Path to the squirrel instance inside Game.tscn
 @onready var squirrel: CharacterBody2D = $Squirrel
 @export var lumberjack_scene: PackedScene  # Drag Lumberjack.tscn here
-@export var lumberjack_spawn_interval: float = 2.5
+@export var lumberjack_spawn_interval: float = 3.2
 @export var lumberjack_y: float = 0.0  # set to the ground/branch y you want
 @export var spawn_margin: float = 80.0
 
